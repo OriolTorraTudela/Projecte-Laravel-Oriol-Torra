@@ -74,50 +74,9 @@ composer require laravel/breeze --dev
 php artisan breeze:install blade
 npm install
 ```
-
 ---
 
-### Pas 3 — Copia els arxius d'aquest ZIP
-
-Copia tots els arxius/carpetes d'aquest ZIP **sobreescrivint** els originals del teu projecte Laravel:
-
-```
-app/Http/Controllers/Auth/RegisteredUserController.php
-app/Http/Controllers/HomeController.php
-app/Http/Controllers/ImageController.php
-app/Http/Controllers/CommentController.php
-app/Http/Controllers/LikeController.php
-app/Http/Controllers/ProfileController.php
-app/Models/User.php
-app/Models/Image.php
-app/Models/Comment.php
-app/Models/Like.php
-app/Providers/AppServiceProvider.php
-database/factories/UserFactory.php
-database/factories/ImageFactory.php
-database/factories/CommentFactory.php
-database/factories/LikeFactory.php
-database/migrations/2025_01_01_000001_add_fields_to_users_table.php
-database/migrations/2025_01_01_000002_create_images_table.php
-database/migrations/2025_01_01_000003_create_comments_table.php
-database/migrations/2025_01_01_000004_create_likes_table.php
-database/seeders/DatabaseSeeder.php
-resources/views/layouts/app.blade.php
-resources/views/home/index.blade.php
-resources/views/images/show.blade.php
-resources/views/images/create.blade.php
-resources/views/images/edit.blade.php
-resources/views/images/edit_comment.blade.php
-resources/views/profile/edit.blade.php
-resources/views/auth/login.blade.php
-resources/views/auth/register.blade.php
-routes/web.php
-routes/auth.php
-```
-
----
-
-### Pas 4 — Configura la base de dades
+### Pas 3 — Configura la base de dades
 
 Edita el fitxer **`.env`** a l'arrel del projecte:
 
@@ -146,7 +105,7 @@ touch database/database.sqlite
 
 ---
 
-### Pas 5 — Executa les migracions
+### Pas 4 — Executa les migracions
 
 ```bash
 php artisan migrate
@@ -154,7 +113,7 @@ php artisan migrate
 
 ---
 
-### Pas 6 — Crea l'enllaç simbòlic per a imatges
+### Pas 5 — Crea l'enllaç simbòlic per a imatges
 
 ```bash
 php artisan storage:link
@@ -168,7 +127,7 @@ ls -la public/storage
 
 ---
 
-### Pas 7 — Pobla la base de dades (factories + seeders)
+### Pas 6 — Pobla la base de dades (factories + seeders)
 
 ```bash
 # Per a una BD neta des de zero (recomanat per al vídeo):
@@ -192,7 +151,7 @@ php artisan db:seed
 
 ---
 
-### Pas 8 — Compila els assets CSS/JS
+### Pas 7 — Compila els assets CSS/JS
 
 ```bash
 npm run dev
@@ -202,7 +161,7 @@ npm run dev
 
 ---
 
-### Pas 9 — Inicia el servidor de Laravel
+### Pas 8 — Inicia el servidor de Laravel
 
 **En un segon terminal** (mantenint `npm run dev` obert):
 
@@ -212,7 +171,7 @@ php artisan serve
 
 ---
 
-### Pas 10 — Obre l'aplicació
+### Pas 9 — Obre l'aplicació
 
 Navega a: **http://localhost:8000**
 
@@ -310,23 +269,4 @@ LIKES
 
 ---
 
-## 🎬 Guia per al vídeo de presentació
-
-**Ordre recomanat:**
-
-1. `php artisan migrate:fresh --seed` — mostra la BD neta + seeding
-2. Navega a http://localhost:8000 — pàgina principal amb imatges paginades
-3. Registre d'un nou usuari (amb nom, cognom, nick, telèfon)
-4. Login amb test@example.com / password
-5. Editar perfil → canviar avatar → desar → veure l'avatar al navbar
-6. Pujar una nova imatge → veure-la al llistat
-7. Editar la imatge → canviar descripció → desar
-8. Obrir una imatge → fer like (reactiu, sense reload) → fer dislike
-9. Afegir un comentari a una imatge aliena
-10. Editar i eliminar el teu propi comentari
-11. Eliminar una imatge pròpia
-12. Canvi de pàgina a la paginació
-
----
-
-*Projecte realitzat per a DAW M613 B3 — Laravel 12*
+*Projecte realitzat per a DAW M613 B3 — Oriol Torra - Laravel 12*
